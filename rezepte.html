@@ -4,18 +4,15 @@
 <meta charset="UTF-8">
 <title>Meine Rezepte</title>
 
-    <header>
-    <div class="logo">23 Athletics</div>
+<style>
+body {
+    font-family: Arial;
+    background: #f9f9f9;
+    margin: 0;
+}
 
-    <nav>
-        <a href="index.html">Startseite</a>
-        <a href="#">Rezepte</a>
-        <a href="#">Kategorien</a>
-        <a href="#">Über mich</a>
-    </nav>
-</header>
-
-    header {
+/* Menü */
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,17 +37,10 @@ nav a:hover {
     color: #777;
 }
 
-<style>
-body {
-    font-family: Arial;
-    background: #f9f9f9;
-    margin: 0;
-}
-
-header {
-    background: white;
-    padding: 20px;
+/* Inhalt */
+.title {
     text-align: center;
+    margin-top: 20px;
 }
 
 .card {
@@ -66,8 +56,17 @@ header {
 <body>
 
 <header>
-    <h1>Meine Rezeptseite</h1>
+    <div class="logo">23 Athletics</div>
+
+    <nav>
+        <a href="index.html">Startseite</a>
+        <a href="#">Rezepte</a>
+        <a href="#">Kategorien</a>
+        <a href="#">Über mich</a>
+    </nav>
 </header>
+
+<h1 class="title">Meine Rezeptseite</h1>
 
 <div class="card">
     <h2>Protein Pancakes</h2>
