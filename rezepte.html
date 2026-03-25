@@ -7,7 +7,8 @@
 <style>
 body {
     font-family: Arial;
-    background: #f9f9f9;
+    background: #111;   /* dunkler Fitness Look */
+    color: white;
     margin: 0;
 }
 
@@ -17,13 +18,13 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
-    background: white;
-    border-bottom: 1px solid #ddd;
+    background: #000;
+    border-bottom: 2px solid #e63946; /* rote Fitness-Akzentfarbe */
 }
-
 .logo {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 22px;
+    color: #e63946;
 }
 
 nav a {
@@ -33,22 +34,50 @@ nav a {
     font-weight: 500;
 }
 
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
 nav a:hover {
-    color: #777;
+    color: #e63946;
 }
 
 /* Inhalt */
 .title {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 30px;
+    font-size: 32px;
 }
 
 .card {
-    background: white;
-    margin: 20px;
-    padding: 15px;
-    border-radius: 10px;
+    background: #1c1c1c;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 500px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
 }
+    <div class="card">
+    <img src="pancakes.jpg" style="width:100%; border-radius:10px;">
+    <h2>Protein Pancakes</h2>
+    <p>Schnell und mit vielen Proteinen</p>
+
+<button style="
+    background:#e63946;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:8px;
+    cursor:pointer;">
+    Rezept ansehen
+    
+</button>
+    
+</div>
+    
 </style>
 
 </head>
