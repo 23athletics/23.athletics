@@ -7,29 +7,22 @@
 <style>
 body {
     font-family: Arial;
-    background: #fffdf9;   /* leicht warmes weiß */
+    background: #fffdf9;
     color: #333;
     margin: 0;
 }
 
-/* Menü */
-header {
+/* Navigation */
+nav {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
+    justify-content: center;
+    padding: 15px;
     background: white;
     border-bottom: 1px solid #eee;
 }
 
-.logo {
-    font-weight: bold;
-    font-size: 22px;
-    color: #e63946; /* kann bleiben */
-}
-
 nav a {
-    margin-left: 20px;
+    margin: 0 15px;
     text-decoration: none;
     color: #555;
     font-weight: 500;
@@ -39,49 +32,71 @@ nav a:hover {
     color: #e63946;
 }
 
-/* Inhalt */
+nav a.active {
+    color: blue;
+    font-weight: bold;
+    border-bottom: 2px solid blue;
+}
+
+/* Titel */
 .title {
     text-align: center;
     margin: 40px 0 20px;
     font-size: 36px;
 }
 
+/* Card */
 .card {
     background: white;
-    margin: 20px 0;
-    padding: 15px;
-    border-radius: 20px;
-    max-width: 2000px;
+    margin: 30px auto;
+    border-radius: 30px; /* runder */
+    width: 75%; /* 3/4 der Seite */
     box-shadow: 0 5px 40px rgba(0,0,0,0.08);
     overflow: hidden;
 }
-    <div class="card">
-    <img src="pancakes.jpg" style="width:100%; height:250px; object-fit:cover;">
-    
-    <div style="padding:15px;">
-        <h2>Protein Pancakes</h2>
-        <p>Schnell und mit vielen Proteinen</p>
-    
-    </div>
-</div>
 
-<button style="
-background:#e63946;
-color:white;
-border:none;
-padding:10px 15px;
-border-radius:8px;
-cursor:pointer;">
-Rezept ansehen
-</button>
-    
-</div>
-    
+/* Inhalt nebeneinander */
+.card-content {
+    display: flex;
+    align-items: center;
+}
+
+/* Text */
+.card-text {
+    padding: 20px;
+    flex: 1;
+}
+
+/* Bild rechts */
+.card img {
+    width: 300px;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Button */
+button {
+    background:#e63946;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:8px;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+/* Responsive (Handy) */
+@media (max-width: 700px) {
+    .card-content {
+        flex-direction: column;
+    }
+
+    .card img {
+        width: 100%;
+        height: 200px;
+    }
+}
 </style>
-
-</head>
-
-<body>
 
 </head>
 
@@ -95,34 +110,33 @@ Rezept ansehen
 <a href="rezepte.html" class="active">gesunde Rezept-Ideen</a>
 </nav>
 
-<style>
-nav a.active {
-    color: blue;
-    font-weight: bold;
-    border-bottom: 2px solid #e63946;
-}
-</style>
-</header>
-
 <h1 class="title">Meine Rezeptseite</h1>
 
 <div class="card">
-    <h2>Protein Pancakes</h2>
-    <p>Zutaten (1 Portion)</p>
-    <p>1 reife Banane</p>
-    <p>2 Eier</p>
-    <p>40 g Haferflocken</p>
-    <p>30 g Proteinpulver (z. B. Vanille)</p>
-    <p>1 TL Backpulver</p>
-    <p>1–2 EL Milch (optional, für bessere Konsistenz)</p>
-    <p>Zubereitung
-Alles mixen
-Banane, Eier, Haferflocken, Proteinpulver und Backpulver in einen Mixer geben und glatt pürieren.
-Teig ruhen lassen (optional)
-2–3 Minuten stehen lassen → wird etwas dicker.
-Ausbacken
-Pfanne leicht einfetten und bei mittlerer Hitze kleine Pancakes ausbacken (ca. 2–3 Minuten pro Seite).</p>
-    
+    <div class="card-content">
+
+        <div class="card-text">
+            <h2>Protein Pancakes</h2>
+
+            <p><strong>Zutaten (1 Portion):</strong></p>
+            <p>1 reife Banane</p>
+            <p>2 Eier</p>
+            <p>40 g Haferflocken</p>
+            <p>30 g Proteinpulver (z. B. Vanille)</p>
+            <p>1 TL Backpulver</p>
+            <p>1–2 EL Milch (optional)</p>
+
+            <p><strong>Zubereitung:</strong></p>
+            <p>Alles mixen: Banane, Eier, Haferflocken, Proteinpulver und Backpulver in einen Mixer geben und glatt pürieren.</p>
+            <p>Teig kurz ruhen lassen (2–3 Minuten).</p>
+            <p>In der Pfanne bei mittlerer Hitze 2–3 Minuten pro Seite ausbacken.</p>
+
+            <button>Rezept ansehen</button>
+        </div>
+
+        <img src="pancakes.jpg" alt="Protein Pancakes">
+
+    </div>
 </div>
 
 </body>
