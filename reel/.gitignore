@@ -1,0 +1,4 @@
+reel/output/frames/
+reel/output/beat.wav
+*.pyc
+__pycache__/
