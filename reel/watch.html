@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#020617" />
+  <title>23.athletics — 6 7 × TimGiho Reel</title>
+  <style>
+    :root {
+      --bg: #020617;
+      --lime: #b4ff78;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: max(16px, env(safe-area-inset-top)) 16px max(24px, env(safe-area-inset-bottom));
+      background:
+        radial-gradient(ellipse 80% 50% at 50% 0%, #0f3d2a 0%, transparent 55%),
+        radial-gradient(ellipse 60% 40% at 80% 100%, #1e1b4b 0%, transparent 50%),
+        var(--bg);
+    }
+
+    .brand {
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    .brand h1 {
+      font-size: clamp(1.4rem, 5vw, 1.85rem);
+      letter-spacing: 0.04em;
+      font-weight: 800;
+    }
+
+    .brand p {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .brand .accent { color: var(--lime); }
+
+    .stage {
+      width: min(100%, 420px);
+      aspect-ratio: 9 / 16;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+      position: relative;
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      background: #000;
+    }
+
+    .hint {
+      margin-top: 14px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      max-width: 28rem;
+      line-height: 1.4;
+    }
+
+    .actions {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    button, a.btn {
+      appearance: none;
+      border: 0;
+      border-radius: 12px;
+      padding: 12px 18px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      color: #02140a;
+      background: var(--lime);
+    }
+
+    a.btn.secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+    }
+  </style>
+</head>
+<body>
+  <header class="brand">
+    <h1>23.athletics</h1>
+    <p><span class="accent">6 7</span> · TimGiho · 20s Reel</p>
+  </header>
+
+  <div class="stage">
+    <video
+      id="reel"
+      playsinline
+      webkit-playsinline
+      controls
+      preload="auto"
+      poster="output/preview_intro.jpg"
+      src="output/23athletics_67_timgioh_reel.mp4"
+    >
+      Dein Browser kann dieses Video nicht abspielen.
+    </video>
+  </div>
+
+  <div class="actions">
+    <button type="button" id="playBtn">Abspielen</button>
+    <a class="btn secondary" href="output/23athletics_67_timgioh_reel.mp4" download>
+      Video laden
+    </a>
+  </div>
+
+  <p class="hint">
+    Tippe auf Abspielen. Funktioniert in Safari auf iPhone &amp; Mac.
+  </p>
+
+  <script>
+    (function () {
+      var video = document.getElementById("reel");
+      var btn = document.getElementById("playBtn");
+
+      function syncLabel() {
+        btn.textContent = video.paused ? "Abspielen" : "Pause";
+      }
+
+      btn.addEventListener("click", function () {
+        if (video.paused) {
+          video.muted = false;
+          var p = video.play();
+          if (p && typeof p.catch === "function") {
+            p.catch(function () {
+              video.muted = true;
+              video.play();
+            });
+          }
+        } else {
+          video.pause();
+        }
+        syncLabel();
+      });
+
+      video.addEventListener("play", syncLabel);
+      video.addEventListener("pause", syncLabel);
+    })();
+  </script>
+</body>
+</html>
